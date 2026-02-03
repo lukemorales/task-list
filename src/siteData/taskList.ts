@@ -1,44 +1,46 @@
-export const taskList = [
+import { Task } from "../types/task"
+
+export const taskList: Task[] = [
   {
     id: "01",
     title: "Go to gym",
-    priority: "high",
-    status: "To Do",
+    priority: "HIGH",
+    status: "TO_DO",
     progress: 0,
   },
   {
     id: "02",
     title: "Read a book",
-    priority: "low",
-    status: "Done",
+    priority: "LOW",
+    status: "DONE",
     progress: 100,
   },
   {
     id: "03",
     title: "Go to market",
-    priority: "medium",
-    status: "In Progress",
+    priority: "MEDIUM",
+    status: "IN_PROGRESS",
     progress: 50,
   },
   {
     id: "04",
     title: "Restart Learning Solidworks",
-    priority: "high",
-    status: "To Do",
+    priority: "HIGH",
+    status: "TO_DO",
     progress: 0,
   },
   {
     id: "05",
     title: "change slider to scroll",
-    priority: "high",
-    status: "Done",
+    priority: "HIGH",
+    status: "DONE",
     progress: 100,
   },
   {
     id: "06",
     title: "To publish the article",
-    priority: "medium",
-    status: "In Progress",
+    priority: "MEDIUM",
+    status: "IN_PROGRESS",
     progress: 50,
   },
 ]

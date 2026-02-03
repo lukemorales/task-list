@@ -1,11 +1,12 @@
 import classNames from "classnames"
 import { ReactComponent as DeleteIcon } from "../../assets/icons/delete.svg"
 import { ReactComponent as EditIcon } from "../../assets/icons/edit.svg"
+import { Task } from "../../types/task"
 import CircularProgressBar from "../CircularProgressBar"
 import "./style.scss"
 
-const TaskCard = ({ task }: any) => {
-  const { id, title, priority, status, progress } = task
+const TaskCard = ({ task, onDeleteClick }: { task: Task; onDeleteClick?: (taskId: string) => void }) => {
+  const { title, priority, status, progress } = task
 
   return (
     <div className="task-card">
@@ -15,7 +16,7 @@ const TaskCard = ({ task }: any) => {
       </div>
       <div className="flex">
         <span className="priority-title">Priority</span>
-        <span className={classNames(`${priority}-priority`, "priority")}>{priority}</span>
+        <span className={classNames(`${priority.toLowerCase()}-priority`, "priority")}>{priority}</span>
       </div>
       <div className="task-status-wrapper">
         <button className="status">{status}</button>
@@ -25,7 +26,7 @@ const TaskCard = ({ task }: any) => {
       </div>
       <div className="actions">
         <EditIcon className="mr-20 cp" />
-        <DeleteIcon className="cp" />
+        <DeleteIcon className="cp" onClick={() => onDeleteClick?.(task.id)} />
       </div>
     </div>
   )
